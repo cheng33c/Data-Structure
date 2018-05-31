@@ -111,10 +111,10 @@ public class LinkedList<E> {
     @Override
     public String toString() {
         StringBuilder res = new StringBuilder();
-        res.append(String.format("LinkedList size=%d\nfront [", size));
+        res.append("[");
         for (Node cur = dummyHead.next; cur != null; cur = cur.next)
             res.append(cur + " -> ");
-        res.append("NULL] tail");
+        res.append("NULL]");
         return res.toString();
     }
 }
