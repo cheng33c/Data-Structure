@@ -37,7 +37,7 @@ public class ArrayQueue<E> implements Queue<E> {
     }
 
     public static void main(String[] args) {
-        ArrayQueue<Integer> queue = new ArrayQueue<Integer>();
+        ArrayQueue<Integer> queue = new ArrayQueue<>();
         for (int i = 0; i < 20; i ++) {
             queue.enqueue(i);
             System.out.println(queue);
@@ -47,9 +47,5 @@ public class ArrayQueue<E> implements Queue<E> {
                 System.out.println(queue);
             }
         }
-
-        System.out.println(queue);
-        queue.dequeue();
-        System.out.println(queue);
     }
 }
