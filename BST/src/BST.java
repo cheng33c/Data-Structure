@@ -1,3 +1,5 @@
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 public class BST<E extends Comparable<E>> {
@@ -72,7 +74,6 @@ public class BST<E extends Comparable<E>> {
         }
     }
 
-
     public void inOrder() {
         inOrder(root);
     }
@@ -83,8 +84,6 @@ public class BST<E extends Comparable<E>> {
             inOrder(node.right);
         }
     }
-
-
 
     public void postOrder() {
         postOrder(root);
@@ -97,7 +96,110 @@ public class BST<E extends Comparable<E>> {
         }
     }
 
+    public void levelOrder() {
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            Node cur = queue.remove();
+            if (cur.left != null)
+                queue.add(cur.left);
+            if (cur.right != null)
+                queue.add(cur.right);
+            System.out.println(cur);
+        }
+    }
 
+    // 寻找最小元素
+    public E minimum() {
+        if (size == 0)
+            throw new IllegalArgumentException("BST is empty!");
+        return minimum(root).e;
+    }
+    private Node minimum(Node node) {
+        return node.left == null ? node : minimum(node.left);
+    }
+
+    public E maximum() {
+        if (size == 0)
+            throw new IllegalArgumentException("BST is empty!");
+        return maximum(root).e;
+    }
+    private Node maximum(Node node) {
+        return node.right == null ? node : maximum(node.right);
+    }
+
+
+    public E removeMin() {
+        E ret = minimum();
+        root = removeMin(root);
+        return ret;
+    }
+    private Node removeMin(Node node) {
+        if (node.left == null) {
+            Node rightNode = node.right;
+            node.right = null;
+            size --;
+            return rightNode;
+        }
+
+        node.left = removeMin(node.left);
+        return node;
+    }
+
+
+    public E removeMax() {
+        E ret = maximum();
+        root = removeMax(root);
+        return ret;
+    }
+    private Node removeMax(Node node) {
+        if (node.right == null) {
+            Node leftNode = node.left;
+            node.left = null;
+            size --;
+            return leftNode;
+        }
+        node.right = removeMax(node.right);
+        return node;
+    }
+
+
+    public void remove(E e) {
+        root = remove(root, e);
+    }
+    private Node remove(Node node, E e) {
+        if (node == null)
+            return null;
+
+        if (e.compareTo(node.e) < 0) {
+            node.left = remove(node.left, e);
+            return node;
+        } else if (e.compareTo(node.e) > 0) {
+            node.right = remove(node.right, e);
+            return node;
+        } else { // e.compareTo(node.e) == 0
+            if (node.left == null) {
+                Node rightNode = node.right;
+                node.right = null;
+                size --;
+                return rightNode;
+            } else if (node.right == null) {
+                Node leftNode = node.left;
+                node.left = null;
+                size --;
+                return leftNode;
+            } else { // node.left != null && node.right != null
+//                Node successor = minimum(node.right);
+//                successor.left = node.left;
+//                successor.right = removeMin(node.right);
+//                node.left = node.right = null;
+                node.e = minimum(node.right).e;
+                node.right = removeMin(node.right);
+                return node;
+            }
+        }
+
+    }
 
     public int size() { return size; }
     public boolean isEmpty() { return size == 0; }

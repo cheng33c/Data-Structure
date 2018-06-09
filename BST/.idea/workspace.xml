@@ -15,29 +15,30 @@
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
+            <state relative-caret-position="906">
+              <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BSTNR.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/BSTNR.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1122">
-              <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BST.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="BST.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/BST.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="127" selection-end-column="5" />
+            <state relative-caret-position="794">
+              <caret line="197" column="28" selection-start-line="197" selection-start-column="28" selection-end-line="197" selection-end-column="28" />
               <folding>
+                <element signature="imports" expanded="true" />
                 <element signature="e#1128#1129#0" expanded="true" />
                 <element signature="e#1158#1159#0" expanded="true" />
+                <element signature="e#2878#2879#0" expanded="true" />
+                <element signature="e#2941#2942#0" expanded="true" />
+                <element signature="e#3145#3146#0" expanded="true" />
+                <element signature="e#3204#3205#0" expanded="true" />
+                <element signature="e#4029#4030#0" expanded="true" />
+                <element signature="e#4059#4060#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -55,9 +56,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/BST.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
         <option value="$PROJECT_DIR$/src/BSTNR.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/BST.java" />
       </list>
     </option>
   </component>
@@ -141,12 +142,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1528528890991</updated>
-      <workItem from="1528528895145" duration="12961000" />
+      <workItem from="1528528895145" duration="19915000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12961000" />
+    <option name="totallyTimeSpent" value="19915000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="52" width="3840" height="2108" extended-state="6" />
@@ -162,11 +163,11 @@
       <window_info anchor="right" id="Maven Projects" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3338566" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3338566" />
+      <window_info anchor="bottom" id="Terminal" weight="0.32967034" />
       <window_info id="Capture Tool" />
       <window_info id="Designer" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.13125" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.13125" />
       <window_info anchor="right" id="Database" />
       <window_info id="Learn" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -195,28 +196,45 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/src/BSTNR.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1338">
+          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jrt:///usr/lib/jvm/java-1.10.0-openjdk-amd64!/java.base/jdk/internal/util/Preconditions.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="936">
+          <caret line="27" selection-start-line="27" selection-end-line="27" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="906">
+          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/BST.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="104" column="4" selection-start-line="104" selection-start-column="4" selection-end-line="127" selection-end-column="5" />
+        <state relative-caret-position="794">
+          <caret line="197" column="28" selection-start-line="197" selection-start-column="28" selection-end-line="197" selection-end-column="28" />
           <folding>
+            <element signature="imports" expanded="true" />
             <element signature="e#1128#1129#0" expanded="true" />
             <element signature="e#1158#1159#0" expanded="true" />
+            <element signature="e#2878#2879#0" expanded="true" />
+            <element signature="e#2941#2942#0" expanded="true" />
+            <element signature="e#3145#3146#0" expanded="true" />
+            <element signature="e#3204#3205#0" expanded="true" />
+            <element signature="e#4029#4030#0" expanded="true" />
+            <element signature="e#4059#4060#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/BSTNR.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1122">
-          <caret line="93" column="5" selection-start-line="93" selection-start-column="5" selection-end-line="93" selection-end-column="5" />
         </state>
       </provider>
     </entry>
