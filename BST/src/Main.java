@@ -1,7 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
-        BST<Integer> bst = new BST<>();
+        BSTNR<Integer> bst = new BSTNR<>();
         int[] nums = {5,3,6,8,4,2};
         for (int num : nums)
             bst.add(num);
@@ -9,16 +9,16 @@ public class Main {
         bst.preOrder();
         System.out.println();
 
-        bst.inOrder();
-        System.out.println();
+//        bst.inOrder();
+//        System.out.println();
+//
+//
+//        bst.postOrder();
+//        System.out.println();
+//
+//        bst.preOrderNR();
+//        System.out.println();
 
-
-        bst.postOrder();
-        System.out.println();
-
-        bst.preOrderNR();
-        System.out.println();
-
-        //System.out.println(bst);
+        System.out.println(bst);
     }
 }
