@@ -117,8 +117,10 @@ public class LoopLinkedList<E> {
         StringBuilder sb = new StringBuilder();
         Node cur = dummyHead.next;
         sb.append(String.format("LoopLinkedList: SIZE=%d\n", size));
-        for (int i = 0; i < size; i ++, cur = cur.next)
-            sb.append(String.format("%d->", cur.e));
+        for (int i = 0; i < size; i ++, cur = cur.next) {
+        	sb.append(cur.e);    
+		sb.append(" -> ");
+	}
         sb.append("NULL");
         return sb.toString();
     }
