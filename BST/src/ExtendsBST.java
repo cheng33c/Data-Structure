@@ -3,10 +3,7 @@ public class ExtendsBST<E extends Comparable<E>> {
         public E e;
         public Node left, right;
         public int size, depth, count;
-        public Node(E e) { this.e = e; size = 1; }
-        public int getSize() { return size; }
-        public int getDepth() { return depth; }
-        public int getCount() { return count; }
+        public Node(E e) { this.e = e; size = 1; count = 1; depth = 1; }
         @Override
         public String toString() { return e.toString(); }
     }
@@ -23,43 +20,27 @@ public class ExtendsBST<E extends Comparable<E>> {
         }
 
         Node cur = root;
-        for (; e.compareTo(cur.e) != 0;) {
-
-            if (e.compareTo(cur.e) < 0 && cur.left == null) {
+        for (;;) {
+            int cmp = e.compareTo(cur.e);
+            if (cmp == 0)
+                cur.count++;
+            if (cmp < 0 && cur.left == null) {
                 cur.left = new Node(e);
                 size ++;
                 return;
-            } else if(e.compareTo(cur.e) > 0 && cur.right == null) {// e.compareTo(cur.e) > 0
+            } else if(cmp > 0 && cur.right == null) {// e.compareTo(cur.e) > 0
                 cur.right = new Node(e);
                 size ++;
                 return;
             }
 
-            if (e.compareTo(cur.e) < 0)
+            if (cmp < 0)
                 cur = cur.left;
-            else // e.compareTo(cur.e) > 0, 相等已经被for语句过滤了
+            else // cmp > 0, 相等已经被for语句过滤了
                 cur = cur.right;
             cur.size ++;
+            cur.depth ++;
         }
-    }
-
-    // 寻找最小元素
-    public E minimum() {
-        if (size == 0)
-            throw new IllegalArgumentException("BST is empty!");
-        return minimum(root).e;
-    }
-    private Node minimum(Node node) {
-        return node.left == null ? node : minimum(node.left);
-    }
-
-    public E maximum() {
-        if (size == 0)
-            throw new IllegalArgumentException("BST is empty!");
-        return maximum(root).e;
-    }
-    private Node maximum(Node node) {
-        return node.right == null ? node : maximum(node.right);
     }
 
     public E floor(E e) {
@@ -112,7 +93,7 @@ public class ExtendsBST<E extends Comparable<E>> {
         if (node == null)
             return 0;
         int cmp = e.compareTo(node.e);
-        int leftSize = node.left == null ? 0 : node.left.getSize();
+        int leftSize = node.left == null ? 0 : node.left.size;
         if (cmp == 0)
             return leftSize + 1;
         else if (cmp > 0)
@@ -120,7 +101,6 @@ public class ExtendsBST<E extends Comparable<E>> {
         else// cmp < 0
             return rank(node.left, e);
     }
-
 
 
 
@@ -133,7 +113,7 @@ public class ExtendsBST<E extends Comparable<E>> {
     private Node select(Node node, int rank) {
         if (node == null)
             return null;
-        int t = node.left == null ? 0 : node.left.getSize();
+        int t = node.left == null ? 0 : node.left.size;
         if (t > rank)
             return select(node.left, rank);
         else if (t < rank)
@@ -141,18 +121,6 @@ public class ExtendsBST<E extends Comparable<E>> {
         else
             return node;
     }
-
-    public void inOrder() {
-        inOrder(root);
-    }
-    private void inOrder(Node node) {
-        if (node != null) {
-            inOrder(node.left);
-            System.out.println(node);
-            inOrder(node.right);
-        }
-    }
-
 
     @Override
     public String toString() {
