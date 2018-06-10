@@ -22,8 +22,10 @@ public class ExtendsBST<E extends Comparable<E>> {
         Node cur = root;
         for (;;) {
             int cmp = e.compareTo(cur.e);
-            if (cmp == 0)
+            if (cmp == 0) {
                 cur.count++;
+                break;
+            }
             if (cmp < 0 && cur.left == null) {
                 cur.left = new Node(e);
                 size ++;
@@ -152,12 +154,14 @@ public class ExtendsBST<E extends Comparable<E>> {
         int[] nums = {5, 10, 20, 13, 56, 31, 88, 62, 19};
         for (int i = 0; i < nums.length; i ++)
             bst.add(nums[i]);
+        bst.add(5);
+        System.out.println(bst);
         //System.out.println(bst.floor(21));
         //System.out.println(bst.ceil(21));
 //        System.out.println(bst.rank(56));
 //        System.out.println(bst.rank(88));
 //        System.out.println(bst.rank(2000));
-        System.out.println(bst.select(3));
+        //System.out.println(bst.select(3));
     }
 
 }
