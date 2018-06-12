@@ -32,7 +32,7 @@ public class SegmentTree<E> {
 
     // 查询[queryL, queryR]区间的值
     public E query(int queryL, int queryR) {
-        if (queryL < 0 || queryL > tree.length || queryR < 0 || queryR > tree.length || queryL > queryR)
+        if (queryL < 0 || queryL > tree.length || queryR < 0 || queryR >= tree.length || queryL > queryR)
             throw new IllegalArgumentException("query failed; query index is illegal");
         return query(0, 0, data.length - 1, queryL, queryR);
     }
@@ -48,7 +48,7 @@ public class SegmentTree<E> {
         if (queryL >= mid + 1) // 区间完全在右子树中
             return query(rightIndex, mid + 1, r, queryL, queryR);
         else if (queryR <= mid) // 区间完全在左子树中
-            return query(leftIndex, l, mid, queryL, mid);
+            return query(leftIndex, l, mid, queryL, queryR);
 
         // else 区间有部分在左子树有部分在右子树
         E leftResult = query(leftIndex, l, mid, queryL, mid);
