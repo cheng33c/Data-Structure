@@ -48,6 +48,7 @@ public class Main {
             endTime = System.nanoTime();
             time = (endTime - startTime) / 1000000000.0;
             System.out.println("AVL Tree: " + time + " s");
+
         }
     }
 }

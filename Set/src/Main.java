@@ -15,7 +15,8 @@ public class Main {
         }
 
         long endTime = System.nanoTime();
-        return endTime - startTime / 1000000000.0;
+        double time = (endTime - startTime) / 1000000000.0;
+        return time;
     }
 
     public static void main(String[] args) {
@@ -30,5 +31,11 @@ public class Main {
         LinkedListSet<String> linkedListSet = new LinkedListSet<>();
         double time2 = testSet(linkedListSet, filename);
         System.out.println("LinkedList Set: " + time2 + " s");
+
+        System.out.println();
+
+        AVLSet<String> as = new AVLSet<>();
+        double time3 = testSet(as, filename);
+        System.out.println("AVL Set: " + time3 + " s");
     }
 }

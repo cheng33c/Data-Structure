@@ -37,5 +37,11 @@ public class Main {
         LinkedListMap<String, Integer> linkedListMap = new LinkedListMap<>();
         double time2 = testMap(linkedListMap, filename);
         System.out.println("LinkedList Map: " + time2 + "s");
+
+        System.out.println();
+
+        AVLMap<String, Integer> am = new AVLMap<>();
+        double time3 = testMap(am, filename);
+        System.out.println("AVL Map: "+  time3 + " s");
     }
 }
